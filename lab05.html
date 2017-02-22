@@ -1,5 +1,3 @@
-
-<!DOCTYPE html>
 <html>
 <head>
 	<script>
@@ -52,11 +50,27 @@
 			}
 			xmlhttp2.open("GET","http://angsila.cs.buu.ac.th/~58160620/887371/lab05/kamkom.php",true);
 			xmlhttp2.send();
+
+			var xmlhttp3;
+			if(window.XMLHttpRequest){ 
+				xmlhttp3=new XMLHttpRequest();
+			}else{
+				xmlhttp3=new ActiveXobject("Microsoft.XMLHTTP");
+			}
+
+			xmlhttp3.onreadystatechange=function() {
+				alert(xmlhttp3.readyState +" : "+xmlhttp3.status);
+				if(xmlhttp3.readyState==4 && xmlhttp3.status==200){
+					document.getElementById("myDiv13").innerHTML = xmlhttp3.responseText;
+				}
+			}
+			xmlhttp3.open("GET","http://angsila.cs.buu.ac.th/~58660090/887371/lab05/kamkom.php",true);
+			xmlhttp3.send();
 		}
 
 	</script>
 </head>
-<body> git config --global user.name "your-name"
+<body>
 <div id="myDiv">
 	<h2>
 	Let AJAX change this text
@@ -70,6 +84,12 @@
 	
 </div>
 <div id="myDiv12">
+	<h2>
+	
+	</h2>
+
+	</div>
+<div id="myDiv13">
 	<h2>
 	
 	</h2>
